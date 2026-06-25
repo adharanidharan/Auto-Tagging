@@ -49,8 +49,8 @@ Make sure you have the following installed:
 
 ### Step 1: Clone & Navigate to Project Root
 ```bash
-git clone 
-cd edutech2
+git clone https://github.com/adharanidharan/Auto-Tagging.git
+cd Auto-Tagging
 ```
 
 ---
