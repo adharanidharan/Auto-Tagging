@@ -4,7 +4,12 @@ An AI-powered, full-stack EdTech application built to help students ask academic
 
 ---
 
-## 🚀 Key Features
+## Selected Assignment Option
+* **Option**: Option 2 - Smart Similar Question Finder with Auto-Tagging
+
+---
+
+## Key Features
 
 * **JWT-Based Authentication**: Registration and login system using cryptographically secure `bcrypt` password hashing and stateless JSON Web Tokens (JWT).
 * **Local-First AI Execution**: Real-time sentence embeddings and cosine similarity computed locally via `sentence-transformers` and `scikit-learn`—**no external paid API dependencies** (OpenAI, Gemini, etc.).
@@ -16,7 +21,7 @@ An AI-powered, full-stack EdTech application built to help students ask academic
 
 ---
 
-## 🏗️ Architecture & Technology Stack
+## Architecture & Technology Stack
 
 ### Backend
 * **FastAPI**: Asynchronous, high-performance Python REST framework.
@@ -37,7 +42,7 @@ An AI-powered, full-stack EdTech application built to help students ask academic
 
 ---
 
-## ⚙️ Local Setup Guide
+## Local Setup Guide
 
 ### Prerequisites
 Make sure you have the following installed:
@@ -50,7 +55,6 @@ Make sure you have the following installed:
 ### Step 1: Clone & Navigate to Project Root
 ```bash
 git clone https://github.com/adharanidharan/Auto-Tagging.git
-cd Auto-Tagging
 ```
 
 ---
@@ -93,7 +97,7 @@ cd Auto-Tagging
    ALGORITHM=HS256
    ACCESS_TOKEN_EXPIRE_MINUTES=90
    ```
-   *(Note: You can replace MONGODB_URI with `mongodb://localhost:27017/techedu` if running MongoDB locally).*
+   *(Note: You can replace MONGODB_URI with `mongodb://localhost:27017/` if running MongoDB locally).*
 
 6. Start the FastAPI development server:
    ```bash
@@ -123,7 +127,7 @@ cd Auto-Tagging
 
 ---
 
-## 🧪 Seeding & Test Executions
+## Seeding & Test Executions
 
 ### Running Automated Test Suites
 The project includes automated integration tests written in `pytest` utilizing `httpx` and `anyio` for asynchronous endpoint testing.
@@ -148,10 +152,3 @@ To test the semantic search and topic classification capabilities immediately wi
    ```
 
 ---
-
-## 📂 Additional Project Guides
-
-For in-depth explanations of specific subsystems:
-* **[Dynamic AI Learning System (DYNAMIC_LEARNING_SYSTEM.md)](file:///d:/yega%20project/AutoTaging/DYNAMIC_LEARNING_SYSTEM.md)**: Details the vector space equations, keyword extraction algorithm, and Swagger verification steps.
-* **[Database Schema Guide (DATABASE_GUIDE.md)](file:///d:/yega%20project/AutoTaging/DATABASE_GUIDE.md)**: Documents MongoDB collections (`users`, `questions`, `topics`, `discovered_topics`, `feedback`, `similarity_results`), field definitions, and async queries.
-* **[Dataset Configuration Guide (DATASET_GUIDE.md)](file:///d:/yega%20project/AutoTaging/DATASET_GUIDE.md)**: Explains the composition of the 5,000+ academic question corpus.
