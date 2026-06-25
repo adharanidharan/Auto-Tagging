@@ -1,7 +1,26 @@
 import axios from 'axios';
 
+const resolveBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (!envUrl) return 'http://localhost:8000/api';
+  // Ensure the base URL ends with /api so client requests go to the correct routes
+  try {
+    const url = new URL(envUrl);
+    // preserve any trailing path, append /api if missing
+    if (url.pathname.endsWith('/api')) return url.toString().replace(/\/$/, '');
+    // remove trailing slash then append /api
+    url.pathname = url.pathname.replace(/\/$/, '') + '/api';
+    return url.toString().replace(/\/$/, '');
+  } catch (e) {
+    // Fallback for relative or malformed values: naive string handling
+    let u = envUrl.replace(/\/$/, '');
+    if (!u.endsWith('/api')) u = `${u}/api`;
+    return u;
+  }
+};
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
+  baseURL: resolveBaseUrl(),
 });
 
 api.interceptors.request.use((config) => {
